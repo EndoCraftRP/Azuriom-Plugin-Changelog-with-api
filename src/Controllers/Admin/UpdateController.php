@@ -27,6 +27,7 @@ class UpdateController extends Controller
             'updates' => $updates,
             'title' => setting('changelog.title', 'Changelog'),
             'webhook' => setting('changelog.webhook'),
+            'api_tokens' => setting('changelog.api_tokens'),
         ]);
     }
 
@@ -35,6 +36,7 @@ class UpdateController extends Controller
         $settings = $this->validate($request, [
             'title' => ['required', 'string', 'max:50'],
             'webhook' => ['nullable', 'url'],
+            'api_tokens' => ['nullable', 'string'],
         ]);
 
         Setting::updateSettings(Arr::prependKeysWith($settings, 'changelog.'));

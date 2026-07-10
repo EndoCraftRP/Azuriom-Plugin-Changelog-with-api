@@ -5,6 +5,8 @@ return [
 
     'settings' => [
         'webhook' => 'URL du webhook Discord',
+        'api_tokens' => 'Jetons API',
+        'api_tokens_help' => 'Utilisez des jetons aléatoires longs (>= 32 caractères). Séparez plusieurs jetons avec des virgules.',
     ],
 
     'categories' => [
