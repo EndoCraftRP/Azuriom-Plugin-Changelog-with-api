@@ -154,6 +154,18 @@
                     </div>
                 </div>
 
+                <div class="mb-3">
+                    <label class="form-label" for="apiTokensInput">{{ trans('changelog::admin.settings.api_tokens') }}</label>
+                    <input type="password" class="form-control @error('api_tokens') is-invalid @enderror" id="apiTokensInput" name="api_tokens" value="{{ old('api_tokens', $api_tokens) }}" aria-describedby="apiTokensHelp">
+                    <small id="apiTokensHelp" class="form-text">
+                        {{ trans('changelog::admin.settings.api_tokens_help', ['default' => 'Use long random tokens (>=32 chars). Separate multiple tokens with commas.']) }}
+                    </small>
+
+                    @error('api_tokens')
+                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                    @enderror
+                </div>
+
                 <button type="submit" class="btn btn-primary">
                     <i class="bi bi-save"></i> {{ trans('messages.actions.save') }}
                 </button>

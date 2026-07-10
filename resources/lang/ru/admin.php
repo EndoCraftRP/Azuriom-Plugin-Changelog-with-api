@@ -5,6 +5,8 @@ return [
 
     'settings' => [
         'webhook' => 'URL вебхука Discord',
+        'api_tokens' => 'API Токены',
+        'api_tokens_help' => 'Используйте длинные случайные токены (>= 32 символов). Разделяйте несколько токенов запятыми.',
     ],
 
     'categories' => [
